@@ -47,6 +47,16 @@
             <tbody>
 
 
+                @for(task <- currentPage.getList) {
+                    <tr>
+                        <td><a href="@routes.Application.edit(task.id)">@task.name</a></td>
+
+                }
+
+            </tbody>
+        </table>
+
+
 
 
 }

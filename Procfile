@@ -1,0 +1,1 @@
+web: target/universal/stage/bin/kadowaki-schedule -Dhttp.port=${PORT} -DapplyEvolutions.default=true -   Ddb.default.driver=org.postgresql.Driver -Ddb.default.url=$postgres://kzecqrlvtevjet:jv8J0FyWLzpZf9QPKuOT9TmlMm@ec2-54-225-102-235.compute-1.amazonaws.com:5432/d2mlneascn54va

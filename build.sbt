@@ -10,7 +10,8 @@ libraryDependencies ++= Seq(
   javaJdbc,
   javaEbean,
   cache,
-  javaWs
+  javaWs,
+  "postgresql" % "postgresql" % "9.1-901-1.jdbc4"
 )
 
 val appDependencies = Seq(

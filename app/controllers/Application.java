@@ -26,6 +26,15 @@ public class Application extends Controller {
         );
     }
 
+	public static Result edit(Long id) {
+        Form<Task> taskForm = form(Task.class).fill(
+            Task.find.byId(id)
+        );
+        return ok(
+            editForm.render(id, taskForm)
+        );
+    }
+
 
 
 
