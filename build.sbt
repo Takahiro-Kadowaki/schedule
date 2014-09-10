@@ -12,3 +12,8 @@ libraryDependencies ++= Seq(
   cache,
   javaWs
 )
+
+val appDependencies = Seq(
+  javaJdbc,
+  javaEbean
+)
