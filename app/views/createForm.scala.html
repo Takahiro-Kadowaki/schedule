@@ -3,4 +3,22 @@
 @import helper._
 
 
-@main("Todo list") {	}
+@main("Todo list") {
+
+<div class="tabbox">
+   <p class="tabs">
+      <a href="#tab1" class="tab1">タブ1</a>
+      <a href="#tab2" class="tab2">タブ2</a>
+      <a href="#tab3" class="tab3">タブ3</a>
+   </p>
+   <div id="tab1" class="tab">
+      <p>(タブ1の中身。何でも記述できます。)</p>
+   </div>
+   <div id="tab2" class="tab">
+      <p>(タブ2の中身。HTMLタグも記述可能です。)</p>
+   </div>
+   <div id="tab3" class="tab">
+      <p>(タブ3の中身。いくつでも増やせます。)</p>
+   </div>
+</div>
+	}

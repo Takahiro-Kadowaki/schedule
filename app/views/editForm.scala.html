@@ -6,13 +6,13 @@
 
 @main("Todo list") {
 
-	<h1>Edit task</h1>
+	<h1>授業の編集</h1>
 
     @form(routes.Application.update(id)) {
 
 	<fieldset>
 
-	@inputText(taskForm("name"), '_label -> "Task name", '_help -> "")
+	@inputText(taskForm("name"), '_label -> "授業名", '_help -> "")
 
 	</fieldset>
 
