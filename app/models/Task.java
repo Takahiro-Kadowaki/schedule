@@ -14,7 +14,9 @@ import play.data.validation.Constraints.*;
 @Entity
 public class Task extends Model {
 
-	 @Id
+	private static final long serialVersionUID = 1L;
+
+	@Id
 	public Long id;
 
 	@Required
@@ -22,15 +24,6 @@ public class Task extends Model {
 
 	public static Finder<Long,Task> find = new Finder<Long,Task>(Long.class, Task.class);
 
-  public static List<Task> all() {
-    return new ArrayList<Task>();
-  }
-
-  public static void create(Task task) {
-  }
-
-  public static void delete(Long id) {
-  }
 
   public static Page<Task> page(int page, int pageSize, String sortBy, String order, String filter) {
       return

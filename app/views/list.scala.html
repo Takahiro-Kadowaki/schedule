@@ -37,23 +37,22 @@
 
 @main("Todo list") {
 
-		<table class="computers zebra-striped">
+	<table class="tasks zebra-striped">
             <thead>
                 <tr>
-                    class
-
+                    @header("name", "月曜日")
                 </tr>
             </thead>
             <tbody>
 
+	@for(task <- currentPage.getList) {
 
-                @for(task <- currentPage.getList) {
-                    <tr>
+						<tr>
                         <td><a href="@routes.Application.edit(task.id)">@task.name</a></td>
+                        </tr>
 
                 }
-
-            </tbody>
+ </tbody>
         </table>
 
 

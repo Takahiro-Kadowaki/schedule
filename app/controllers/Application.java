@@ -13,6 +13,10 @@ public class Application extends Controller {
 
 	static Form<Task> taskForm = Form.form(Task.class);
 
+	public static Result GO_HOME = redirect(
+	        routes.Application.list(0, "name", "asc", "")
+	    );
+
 	public static Result index() {
 		  return redirect(routes.Application.list(0, "name", "asc", ""));
 		}
@@ -35,6 +39,33 @@ public class Application extends Controller {
         );
     }
 
+	public static Result update(Long id) {
+        Form<Task> taskForm = form(Task.class).bindFromRequest();
+        if(taskForm.hasErrors()) {
+            return badRequest(editForm.render(id, taskForm));
+        }
+        taskForm.get().update(id);
+        flash("success", "Task " + taskForm.get().name + " has been updated");
+        return GO_HOME;
+    }
+
+	public static Result create() {
+        Form<Task> taskForm = form(Task.class);
+        return ok(
+            createForm.render(taskForm)
+        );
+    }
+
+
+    public static Result save() {
+        Form<Task> taskForm = form(Task.class).bindFromRequest();
+        if(taskForm.hasErrors()) {
+            return badRequest(createForm.render(taskForm));
+        }
+        taskForm.get().save();
+        flash("success", "Task " + taskForm.get().name + " has been created");
+        return GO_HOME;
+    }
 
 
 

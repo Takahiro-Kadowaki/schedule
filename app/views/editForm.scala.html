@@ -1,4 +1,4 @@
-@(id: Long, computerForm: Form[Task])
+@(id: Long, taskForm: Form[Task])
 
 @import helper._
 
@@ -6,15 +6,22 @@
 
 @main("Todo list") {
 
-fieldset>
+	<h1>Edit task</h1>
 
-            @inputText(computerForm("name"), '_label -> "Computer name", '_help -> "")
+    @form(routes.Application.update(id)) {
 
-        </fieldset>
+	<fieldset>
+
+	@inputText(taskForm("name"), '_label -> "Task name", '_help -> "")
+
+	</fieldset>
 
         <div class="actions">
             <input type="submit" value="Save this task" class="btn primary"> or
             <a href="@routes.Application.list()" class="btn">Cancel</a>
         </div>
+
+        }
+
 
 }
