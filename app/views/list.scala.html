@@ -37,10 +37,48 @@
 
 @main("Todo list") {
 
+	<h1 id="homeTitle">@Messages("", currentPage.getTotalRowCount)</h1>
+
+    @if(flash.containsKey("success")) {
+        <div class="alert-message warning">
+            <strong>Done!</strong> @flash.get("success")
+        </div>
+    }
+
+    <div id="actions">
+
+        <form action="@link(0, "name")" method="GET">
+            <input type="search" id="searchbox" name="f" value="@currentFilter" placeholder="Filter by Task name...">
+            <input type="submit" id="searchsubmit" value="Filter by name" class="btn primary">
+        </form>
+
+        <a class="btn success" id="add" href="@routes.Application.create()">Add a new Task</a>
+
+
+    </div>
+
+    @if(currentPage.getTotalRowCount == 0) {
+
+        <div class="well">
+            <em>Nothing to display</em>
+        </div>
+
+    } else {
+
 	<table class="tasks zebra-striped">
             <thead>
                 <tr>
+                	@header("name", "")
                     @header("name", "月曜日")
+                    @header("name", "火曜日")
+                    @header("name", "水曜日")
+                    @header("name", "木曜日")
+                    @header("name", "金曜日")
+                    @header("name", "土曜日")
+                    @header("name", "日曜日")
+                </tr>
+                <tr>
+                	@header("name", "時限")
                 </tr>
             </thead>
             <tbody>
@@ -48,6 +86,7 @@
 	@for(task <- currentPage.getList) {
 
 						<tr>
+						<td><a href="@routes.Application.edit(task.id)">@task.id</a></td>
                         <td><a href="@routes.Application.edit(task.id)">@task.name</a></td>
                         </tr>
 
@@ -56,6 +95,7 @@
         </table>
 
 
+    }
 
 
 }
