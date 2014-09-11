@@ -21,6 +21,7 @@ public class Task extends Model {
 
 	@Required
 	 public String name;
+	 public String pr;
 
 	public static Finder<Long,Task> find = new Finder<Long,Task>(Long.class, Task.class);
 

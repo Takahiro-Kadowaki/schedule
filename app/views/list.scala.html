@@ -53,7 +53,7 @@
             <input type="submit" id="searchsubmit" value="Filter by name" class="btn primary">
         </form>
 
-        <a class="btn success" id="add" href="@routes.Application.create()">Add a new Task</a>
+		<a class="btn success" id="add" href="@routes.Application.create()">新しい授業の追加</a>
 
 
     </div>
@@ -88,7 +88,8 @@
 
 						<tr>
 						<td><a href="@routes.Application.edit(task.id)">@task.id</a></td>
-                        <td><a href="@routes.Application.edit(task.id)">@task.name</a></td>
+						<td><a href="@routes.Application.edit(task.id)">@task.name</a></td>
+
                         </tr>
 
                 }
@@ -97,6 +98,101 @@
 
 
     }
+
+    <!--タブ-->
+<ul class="nav nav-tabs">
+<li class="active"><a href="#tab1" data-toggle="tab">月曜日</a></li>
+<li><a href="#tab2" data-toggle="tab">火曜日</a></li>
+<li><a href="#tab3" data-toggle="tab">水曜日</a></li>
+<li><a href="#tab4" data-toggle="tab">木曜日</a></li>
+<li><a href="#tab5" data-toggle="tab">金曜日</a></li>
+<li><a href="#tab6" data-toggle="tab">土曜日</a></li>
+<li><a href="#tab7" data-toggle="tab">日曜日</a></li>
+</ul>
+<!-- / タブ-->
+<div id="myTabContent" class="tab-content">
+<div class="tab-pane fade in active" id="tab1">
+
+<table class="tasks zebra-striped">
+            <thead>
+                <tr>
+                	@header("name", "")
+                    @header("name", "月曜日")
+                    @header("name", "教授名")
+                    @header("name", "単位")
+                </tr>
+                <tr>
+                	@header("name", "時限")
+                </tr>
+            </thead>
+            <tbody>
+
+	@for(task <- currentPage.getList) {
+
+						<tr>
+						<td><a href="@routes.Application.edit(task.id)">@task.id</a></td>
+						<td><a href="@routes.Application.edit(task.id)">@task.name</a></td>
+						<td><a href="@routes.Application.edit(task.id)">@task.pr</a></td>
+                        </tr>
+
+                }
+ </tbody>
+        </table>
+
+</div>
+<div class="tab-pane fade" id="tab2">
+
+<table class="tasks zebra-striped">
+            <thead>
+                <tr>
+                	@header("name", "")
+                    @header("name", "火曜日")
+                    @header("name", "教授名")
+                    @header("name", "教室名")
+                </tr>
+                <tr>
+                	@header("name", "時限")
+                </tr>
+            </thead>
+            <tbody>
+
+	@for(task <- currentPage.getList) {
+
+						<tr>
+						<td><a href="@routes.Application.edit(task.id)">@task.id</a></td>
+						<td><a href="@routes.Application.edit(task.id)">@task.name</a></td>
+						<td><a href="@routes.Application.edit(task.id)">@task.pr</a></td>
+                        </tr>
+
+                }
+ </tbody>
+        </table>
+
+
+</div>
+
+<div class="tab-pane fade" id="tab3">
+
+</div>
+
+<div class="tab-pane fade" id="tab4">
+
+</div>
+
+<div class="tab-pane fade" id="tab5">
+
+</div>
+
+<div class="tab-pane fade" id="tab6">
+
+</div>
+
+<div class="tab-pane fade" id="tab7">
+
+</div>
+
+
+</div>
 
 
 }

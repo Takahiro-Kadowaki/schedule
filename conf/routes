@@ -6,7 +6,7 @@
 GET     /                           controllers.Application.index()
 
 # Tasks
-GET     /tasks                  controllers.Application.list(p:Int ?= 0, s ?= "name", o ?= "asc", f ?= "")
+GET     /tasks                  controllers.Application.list(p:Int ?= 0, s ?= "id", o ?= "asc", f ?= "")
 
 # Edit existing computer
 GET     /tasks/:id              controllers.Application.edit(id:Long)
@@ -15,6 +15,8 @@ POST    /tasks/:id              controllers.Application.update(id:Long)
 # Add task
 GET     /tasks/new              controllers.Application.create()
 POST    /tasks                  controllers.Application.save()
+
+
 
 
 # Map static resources from the /public folder to the /assets URL path

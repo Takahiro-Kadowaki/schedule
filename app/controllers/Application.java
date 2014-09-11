@@ -14,11 +14,11 @@ public class Application extends Controller {
 	static Form<Task> taskForm = Form.form(Task.class);
 
 	public static Result GO_HOME = redirect(
-	        routes.Application.list(0, "name", "asc", "")
+	        routes.Application.list(0, "id", "asc", "")
 	    );
 
 	public static Result index() {
-		  return redirect(routes.Application.list(0, "name", "asc", ""));
+		  return GO_HOME;
 		}
 
 	public static Result list(int page, String sortBy, String order, String filter) {
@@ -38,6 +38,8 @@ public class Application extends Controller {
             editForm.render(id, taskForm)
         );
     }
+
+
 
 	public static Result update(Long id) {
         Form<Task> taskForm = form(Task.class).bindFromRequest();
