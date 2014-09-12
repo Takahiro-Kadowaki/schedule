@@ -4,10 +4,14 @@
 # --- !Ups
 
 create table task (
-  id                        bigint not null,
+  task_id                   bigint not null,
+  week_id                   bigint,
+  time_id                   bigint,
   name                      varchar(255),
   pr                        varchar(255),
-  constraint pk_task primary key (id))
+  create_date               timestamp,
+  update_date               timestamp,
+  constraint pk_task primary key (task_id))
 ;
 
 create sequence task_seq;

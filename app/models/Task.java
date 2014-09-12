@@ -17,11 +17,20 @@ public class Task extends Model {
 	private static final long serialVersionUID = 1L;
 
 	@Id
-	public Long id;
+	@GeneratedValue
+	public Long task_id;
+	public Long week_id;
+	public Long time_id;
 
 	@Required
 	 public String name;
 	 public String pr;
+
+	 @Formats.DateTime(pattern="yyyy-MM-dd")
+	 public Date create_date;
+
+	 @Formats.DateTime(pattern="yyyy-MM-dd")
+	 public Date update_date;
 
 	public static Finder<Long,Task> find = new Finder<Long,Task>(Long.class, Task.class);
 

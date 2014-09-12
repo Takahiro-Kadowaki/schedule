@@ -6,11 +6,16 @@
 GET     /                           controllers.Application.index()
 
 # Tasks
-GET     /tasks                  controllers.Application.list(p:Int ?= 0, s ?= "id", o ?= "asc", f ?= "")
+GET     /tasks                  controllers.Application.list(p:Int ?= 0, s ?= "task_id", o ?= "asc", f ?= "")
 
-# Edit existing computer
-GET     /tasks/:id              controllers.Application.edit(id:Long)
-POST    /tasks/:id              controllers.Application.update(id:Long)
+# Edit existing tasks
+GET     /tasks/:task_id              controllers.Application.edit(task_id:Long)
+POST    /tasks/:task_id              controllers.Application.update(task_id:Long)
+
+# Edit existing pr
+GET     /tasks/:task_id              controllers.Application.edit_pr(task_id:Long)
+POST    /tasks/:task_id              controllers.Application.update_pr(task_id:Long)
+
 
 # Add task
 GET     /tasks/new              controllers.Application.create()

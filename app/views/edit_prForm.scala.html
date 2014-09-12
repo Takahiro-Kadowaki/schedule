@@ -6,25 +6,22 @@
 
 @main("Todo list") {
 
-	<h1>授業名の編集</h1>
+    <h1>教授名の編集</h1>
 
-    @form(routes.Application.update(id)) {
+    @form(routes.Application.update_pr(id)) {
 
-	<fieldset>
+        <fieldset>
 
-	@inputText(taskForm("name"), '_label -> "授業名", '_help -> "")
+            @inputText(taskForm("pr"), '_label -> "教授名", '_help -> "")
 
-	</fieldset>
+        </fieldset>
 
         <div class="actions">
-            <input type="submit" value="Save this task" class="btn primary"> or
+            <input type="submit" value="Save this computer" class="btn primary"> or
             <a href="@routes.Application.list()" class="btn">Cancel</a>
         </div>
 
-        }
-
-
-
+    }
 
 
 }
